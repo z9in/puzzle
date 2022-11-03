@@ -9,6 +9,7 @@
         * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
         body {
             height: 100vh;
@@ -18,23 +19,34 @@
             justify-content: center;
         }
         .container {
-            width: 1600px;
+            width: 1440px;
             height: 1080px;
             display: flex;
             outline: 2px solid black;
             margin: auto;
             align-items: center;
         }
+        .aside {
+            width: 440px;
+            height: 1080px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+
+        }
         .puzzle {
             outline: 1px solid red;
-            width: 1440px;
+            width: 1000px;
             height: 1080px;
             display: flex;
             flex-wrap: wrap;
 
         }
-        img {
-            width: 720px;
+        .puz {
+            /* outline: 1px solid blue; */
+            width: 500px;
             height: 540px;
         }
         p {
@@ -48,21 +60,27 @@
         button {
             width: 130px;
             height: 50px;
-            justify-self: center;
             font-size: 2em;
-            margin-left: 12px;
+            margin-bottom: 100px;
+        }
+        .result {
+            width: 400px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="puzzle">
-            <img onclick="action(0)" src="./조각1.jpg" alt="조각1">
-            <img onclick="action(1)" src="./조각3.jpg" alt="조각3">
-            <img onclick="action(2)" src="./조각2.jpg" alt="조각2">           
-            <img onclick="action(3)" src="./조각4.jpg" alt="조각4">
+            <img class="puz" onclick="action(0)" src="./조각1.jpg" alt="조각1">
+            <img class="puz" onclick="action(1)" src="./조각3.jpg" alt="조각3">
+            <img class="puz" onclick="action(2)" src="./조각2.jpg" alt="조각2">           
+            <img class="puz" onclick="action(3)" src="./조각4.jpg" alt="조각4">
         </div>
-        <button onclick="reset()">Reset</button>
+        <div class="aside">
+            <button onclick="reset()">Reset</button>
+            <img class="result" src="./bg3.jpg" alt="완성본">
+        </div>
+        
     </div>
 
     <script>
